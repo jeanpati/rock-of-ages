@@ -4,12 +4,12 @@ from rest_framework import routers
 from rockapi.views import register_user, login_user
 from django.conf.urls import include
 from rest_framework import routers
-from rockapi.views import TypeView
+from rockapi.views import TypeView, RockView
 
-router = routers.DefaultRouter(trailing_slash=False)
 
 router = routers.DefaultRouter(trailing_slash=False)
 router.register(r"types", TypeView, "type")
+router.register(r"rocks", RockView, "rock")
 
 urlpatterns = [
     path("", include(router.urls)),
